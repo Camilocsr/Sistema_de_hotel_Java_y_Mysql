@@ -15,7 +15,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author LENOVO
  */
-public class frmproducto extends javax.swing.JFrame {
+public class frmproducto extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form frmproducto

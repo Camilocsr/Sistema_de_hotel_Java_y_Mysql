@@ -14,7 +14,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author /CSR/ Camilo Solano Rodriguez.
  */
-public class frmhabitacion extends javax.swing.JFrame {
+public class frmhabitacion extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form frmhabitacion
@@ -142,6 +142,7 @@ public class frmhabitacion extends javax.swing.JFrame {
         jLabel1.setText("Habitacion");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jPanel1.setBackground(new java.awt.Color(204, 0, 153));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Registro de habitaciones.", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 2, 18))); // NOI18N

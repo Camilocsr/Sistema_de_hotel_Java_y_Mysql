@@ -203,4 +203,53 @@ public class ftrabajador {
             return false;
         }
     }
+    
+    public DefaultTableModel login(String login,String password) {
+        DefaultTableModel modelo;
+       
+       String [] titulos = {"ID","Nombre","Apaterno","Amaterno","Acceso","Login","Clave","Estado"};
+       
+       String [] registro =new String [8];
+       
+       totalregistros=0;
+       modelo = new DefaultTableModel(null,titulos);
+       
+       sSQL = "select p.idpersona,p.nombre,p.apaterno,p.amaterno,"
+                + "t.acceso,t.login,t.password,t.estado from persona p inner join Trabajador t "
+                + "on p.idpersona=t.idpersona where t.login='"
+                + login + "' and t.password='" + password + "' and t.estado = 'A'";
+       
+       try {
+           Statement st= cn.createStatement();
+           ResultSet rs=st.executeQuery(sSQL);
+           
+           while(rs.next()){
+               registro [0]=rs.getString("idpersona");
+               registro [1]=rs.getString("nombre");
+               registro [2]=rs.getString("apaterno");
+               registro [3]=rs.getString("amaterno");
+               
+               registro [4]=rs.getString("acceso");
+               registro [5]=rs.getString("login");
+               registro [6]=rs.getString("password");
+               registro [7]=rs.getString("estado");
+               
+               
+               totalregistros=totalregistros+1;
+               modelo.addRow(registro);
+               
+           }
+           return modelo;
+           
+       } catch (Exception e) {
+           JOptionPane.showConfirmDialog(null, e);
+           return null;
+       }
+    }
+    
+    
+    
+    
+    
+    
 }

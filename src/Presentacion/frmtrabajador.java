@@ -12,7 +12,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author /CSR/ Camilo Solano Rodriguez...
  */
-public class frmtrabajador extends javax.swing.JFrame {
+public class frmtrabajador extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form frmcliente
@@ -168,7 +168,7 @@ public class frmtrabajador extends javax.swing.JFrame {
         btnsalir = new javax.swing.JButton();
         lbltotalregistros = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(204, 0, 153));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Registro de trabajadores", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 2, 18))); // NOI18N
@@ -286,7 +286,7 @@ public class frmtrabajador extends javax.swing.JFrame {
 
         jLabel15.setText("Estado");
 
-        cboestado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A", "D" }));
+        cboestado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A", "T" }));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
