@@ -188,10 +188,11 @@ public class frmreserva extends javax.swing.JInternalFrame {
         btneliminar = new javax.swing.JButton();
         btnsalir = new javax.swing.JButton();
         lbltotalregistros = new javax.swing.JLabel();
+        btnverconsumo = new javax.swing.JButton();
 
         jLabel1.setText("jLabel1");
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(204, 0, 153));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Registro de reservas.", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 2, 18))); // NOI18N
@@ -488,12 +489,21 @@ public class frmreserva extends javax.swing.JInternalFrame {
 
         lbltotalregistros.setText("Registros");
 
+        btnverconsumo.setText("Ver Consumo:");
+        btnverconsumo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnverconsumoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(45, 45, 45)
+                .addComponent(btnverconsumo)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lbltotalregistros)
                 .addGap(119, 119, 119))
             .addGroup(jPanel2Layout.createSequentialGroup()
@@ -527,8 +537,10 @@ public class frmreserva extends javax.swing.JInternalFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 228, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
-                .addComponent(lbltotalregistros)
-                .addGap(61, 61, 61))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lbltotalregistros)
+                    .addComponent(btnverconsumo))
+                .addGap(52, 52, 52))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -742,6 +754,18 @@ public class frmreserva extends javax.swing.JInternalFrame {
         form.setVisible(true);
     }//GEN-LAST:event_btnbuscaclienteActionPerformed
 
+    private void btnverconsumoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnverconsumoActionPerformed
+        // TODO add your handling code here:
+        int fila = tablalistado.getSelectedRow();
+        frmconsumo.idreserva = tablalistado.getValueAt(fila, 0).toString();
+        frmconsumo.cliente = tablalistado.getValueAt(fila, 4).toString();
+        
+        frmconsumo form = new frmconsumo();
+        frminicio.escritorio.add(form);
+        form.toFront();
+        form.setVisible(true);
+    }//GEN-LAST:event_btnverconsumoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -786,6 +810,7 @@ public class frmreserva extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnguardar;
     private javax.swing.JButton btnnuevo;
     private javax.swing.JButton btnsalir;
+    private javax.swing.JButton btnverconsumo;
     private javax.swing.JComboBox<String> cboestado;
     private javax.swing.JComboBox<String> cbotipo_habitacion;
     private javax.swing.JComboBox<String> cbotipo_reserva;

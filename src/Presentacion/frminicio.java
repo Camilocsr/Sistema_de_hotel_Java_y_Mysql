@@ -35,6 +35,7 @@ public class frminicio extends javax.swing.JFrame {
         lblapaterno = new javax.swing.JLabel();
         lblamaterno = new javax.swing.JLabel();
         lblacceso = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         menuBar = new javax.swing.JMenuBar();
         mnusisreserva = new javax.swing.JMenu();
         mnuarchivo = new javax.swing.JMenu();
@@ -82,6 +83,10 @@ public class frminicio extends javax.swing.JFrame {
         lblacceso.setText("jLabel5");
         escritorio.add(lblacceso);
         lblacceso.setBounds(20, 230, 150, 14);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/logomiogrande.png"))); // NOI18N
+        escritorio.add(jLabel2);
+        jLabel2.setBounds(380, 20, 850, 540);
 
         mnusisreserva.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/Inicio.png"))); // NOI18N
         mnusisreserva.setMnemonic('f');
@@ -204,7 +209,7 @@ public class frminicio extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(escritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 518, Short.MAX_VALUE)
+            .addComponent(escritorio, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 518, Short.MAX_VALUE)
         );
 
         pack();
@@ -299,6 +304,7 @@ public class frminicio extends javax.swing.JFrame {
     private javax.swing.JMenuItem copyMenuItem;
     private javax.swing.JMenuItem cutMenuItem;
     public static javax.swing.JDesktopPane escritorio;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;

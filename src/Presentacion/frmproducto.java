@@ -13,7 +13,8 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author LENOVO
+ * @author /CSR/ Camilo Solano Rodriguez...
+ *
  */
 public class frmproducto extends javax.swing.JInternalFrame {
 
