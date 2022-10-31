@@ -44,7 +44,6 @@ public class frminicio extends javax.swing.JFrame {
         mnureservas = new javax.swing.JMenu();
         contentMenuItem = new javax.swing.JMenuItem();
         aboutMenuItem = new javax.swing.JMenuItem();
-        jMenuItem1 = new javax.swing.JMenuItem();
         mnuconfiguraciones = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
         mnusalir = new javax.swing.JMenu();
@@ -141,11 +140,6 @@ public class frminicio extends javax.swing.JFrame {
             }
         });
         mnureservas.add(aboutMenuItem);
-
-        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_G, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/pagos.png"))); // NOI18N
-        jMenuItem1.setText("Pagos.");
-        mnureservas.add(jMenuItem1);
 
         menuBar.add(mnureservas);
 
@@ -279,7 +273,6 @@ public class frminicio extends javax.swing.JFrame {
     private javax.swing.JMenuItem cutMenuItem;
     public static javax.swing.JDesktopPane escritorio;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     public static javax.swing.JLabel lblacceso;
     public static javax.swing.JLabel lblamaterno;
