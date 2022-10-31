@@ -5,7 +5,9 @@
  */
 package Presentacion;
 
+import Datos.vhabitacion;
 import Datos.vreserva;
+import Logica.fhhabitacion;
 import Logica.fproducto;
 import Logica.freserva;
 import java.sql.Date;
@@ -157,8 +159,6 @@ public class frmreserva extends javax.swing.JInternalFrame {
         txtconsto_alojamiento = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         cbotipo_reserva = new javax.swing.JComboBox<>();
-        jLabel8 = new javax.swing.JLabel();
-        cbotipo_habitacion = new javax.swing.JComboBox<>();
         btnnuevo = new javax.swing.JButton();
         btnguardar = new javax.swing.JButton();
         btncancelar = new javax.swing.JButton();
@@ -189,6 +189,7 @@ public class frmreserva extends javax.swing.JInternalFrame {
         btnsalir = new javax.swing.JButton();
         lbltotalregistros = new javax.swing.JLabel();
         btnverconsumo = new javax.swing.JButton();
+        btnrealizarpagos = new javax.swing.JButton();
 
         jLabel1.setText("jLabel1");
 
@@ -224,15 +225,6 @@ public class frmreserva extends javax.swing.JInternalFrame {
         jLabel7.setText("Tipo de reserva:");
 
         cbotipo_reserva.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Dias", "Noches", " " }));
-
-        jLabel8.setText("Tipo de habitacion");
-
-        cbotipo_habitacion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Individual", "Matrimonial", "Familiar", "Presidencial" }));
-        cbotipo_habitacion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbotipo_habitacionActionPerformed(evt);
-            }
-        });
 
         btnnuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/nuevo.GIF"))); // NOI18N
         btnnuevo.setText("Nuevo");
@@ -304,9 +296,7 @@ public class frmreserva extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel13))
+                        .addComponent(jLabel6)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel5)
@@ -338,18 +328,15 @@ public class frmreserva extends javax.swing.JInternalFrame {
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(cbotipo_habitacion, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(112, 112, 112))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(btnnuevo)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel8)
                                             .addComponent(jLabel3)
                                             .addComponent(jLabel11)
                                             .addComponent(jLabel12))
-                                        .addGap(11, 11, 11)))
+                                        .addGap(24, 24, 24))
+                                    .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.LEADING))
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGap(69, 69, 69)
@@ -411,13 +398,9 @@ public class frmreserva extends javax.swing.JInternalFrame {
                         .addComponent(jLabel12)
                         .addGap(18, 18, 18)
                         .addComponent(jLabel6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(18, 18, 18)
                         .addComponent(jLabel13)
-                        .addGap(24, 24, 24)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel8)
-                            .addComponent(cbotipo_habitacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(29, 29, 29)
+                        .addGap(66, 66, 66)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnnuevo)
                             .addComponent(btnguardar)
@@ -426,7 +409,7 @@ public class frmreserva extends javax.swing.JInternalFrame {
                         .addComponent(dcfecha_salida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(txtconsto_alojamiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(cboestado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(23, Short.MAX_VALUE))
         );
@@ -496,6 +479,13 @@ public class frmreserva extends javax.swing.JInternalFrame {
             }
         });
 
+        btnrealizarpagos.setText("Realizar el pago.");
+        btnrealizarpagos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnrealizarpagosActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -503,6 +493,8 @@ public class frmreserva extends javax.swing.JInternalFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addGap(45, 45, 45)
                 .addComponent(btnverconsumo)
+                .addGap(18, 18, 18)
+                .addComponent(btnrealizarpagos)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lbltotalregistros)
                 .addGap(119, 119, 119))
@@ -539,7 +531,9 @@ public class frmreserva extends javax.swing.JInternalFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lbltotalregistros)
-                    .addComponent(btnverconsumo))
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btnverconsumo)
+                        .addComponent(btnrealizarpagos)))
                 .addGap(52, 52, 52))
         );
 
@@ -584,11 +578,6 @@ public class frmreserva extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         txtconsto_alojamiento.transferFocus();
     }//GEN-LAST:event_txtconsto_alojamientoActionPerformed
-
-    private void cbotipo_habitacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbotipo_habitacionActionPerformed
-        // TODO add your handling code here:
-        cbotipo_habitacion.transferFocus();
-    }//GEN-LAST:event_cbotipo_habitacionActionPerformed
 
     private void btnnuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnnuevoActionPerformed
         habilitar();
@@ -660,6 +649,13 @@ public class frmreserva extends javax.swing.JInternalFrame {
                 JOptionPane.showConfirmDialog(rootPane, "La reserva fue registrada correctamente.");
                 mostrar("");
                 inhabilitar();
+                
+                fhhabitacion func3 = new fhhabitacion();
+                vhabitacion dts3 = new vhabitacion();
+                
+                dts3.setIdhabitacion(Integer.parseInt(txtidhabitacion.getText()));
+                
+                func3.ocupar(dts3);
             }
         } else if (accion.equals("editar")) {
             dts.setIdreserva(Integer.parseInt(txtidreserva.getText()));
@@ -766,6 +762,22 @@ public class frmreserva extends javax.swing.JInternalFrame {
         form.setVisible(true);
     }//GEN-LAST:event_btnverconsumoActionPerformed
 
+    private void btnrealizarpagosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnrealizarpagosActionPerformed
+        // TODO add your handling code here:
+        int fila = tablalistado.getSelectedRow();
+        frmPago.idreserva = tablalistado.getValueAt(fila, 0).toString();
+        frmPago.cliente = tablalistado.getValueAt(fila, 4).toString();
+        frmPago.totalreserva =Double.parseDouble(tablalistado.getValueAt(fila, 11).toString());
+        frmPago.idhabitacion = tablalistado.getValueAt(fila, 1).toString();
+        frmPago.habitacion = tablalistado.getValueAt(fila, 2).toString();
+        
+        frmPago form = new frmPago();
+        
+        frminicio.escritorio.add(form);
+        form.toFront();
+        form.setVisible(true);
+    }//GEN-LAST:event_btnrealizarpagosActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -809,10 +821,10 @@ public class frmreserva extends javax.swing.JInternalFrame {
     private javax.swing.JButton btneliminar;
     private javax.swing.JButton btnguardar;
     private javax.swing.JButton btnnuevo;
+    private javax.swing.JButton btnrealizarpagos;
     private javax.swing.JButton btnsalir;
     private javax.swing.JButton btnverconsumo;
     private javax.swing.JComboBox<String> cboestado;
-    private javax.swing.JComboBox<String> cbotipo_habitacion;
     private javax.swing.JComboBox<String> cbotipo_reserva;
     private com.toedter.calendar.JDateChooser dcfecha_ingreso;
     private com.toedter.calendar.JDateChooser dcfecha_reserva;
@@ -828,7 +840,6 @@ public class frmreserva extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

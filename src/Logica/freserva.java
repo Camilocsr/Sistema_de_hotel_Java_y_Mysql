@@ -143,7 +143,6 @@ public class freserva {
    public boolean pagar (vreserva dts){
        sSQL="update reserva set estado='Pagada'"+
                " where idreserva=?";
-           //alt + 39
        
        try {
            PreparedStatement pst=cn.prepareStatement(sSQL);

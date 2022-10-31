@@ -156,7 +156,7 @@ public class frmconsumo extends javax.swing.JInternalFrame {
         txtdescripcion.setRows(5);
         jScrollPane1.setViewportView(txtdescripcion);
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(204, 0, 153));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Registro de consumo.", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 2, 18))); // NOI18N

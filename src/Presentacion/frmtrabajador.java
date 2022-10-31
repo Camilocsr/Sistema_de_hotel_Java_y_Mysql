@@ -276,7 +276,7 @@ public class frmtrabajador extends javax.swing.JInternalFrame {
             }
         });
 
-        cboacceso.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Completo.", "Medio", "Minimo." }));
+        cboacceso.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Completo", "Medio" }));
 
         jLabel1.setText("Acceso");
 

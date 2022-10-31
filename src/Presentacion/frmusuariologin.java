@@ -67,7 +67,7 @@ public class frmusuariologin extends javax.swing.JFrame {
         jLabel1.setText("User:");
 
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("contraseña: ");
+        jLabel2.setText("Password:");
 
         btningresar.setBackground(new java.awt.Color(0, 0, 204));
         btningresar.setForeground(new java.awt.Color(255, 255, 255));

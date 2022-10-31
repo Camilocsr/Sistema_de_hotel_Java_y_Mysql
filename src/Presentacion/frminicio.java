@@ -45,13 +45,8 @@ public class frminicio extends javax.swing.JFrame {
         contentMenuItem = new javax.swing.JMenuItem();
         aboutMenuItem = new javax.swing.JMenuItem();
         jMenuItem1 = new javax.swing.JMenuItem();
-        mnuconsultas = new javax.swing.JMenu();
         mnuconfiguraciones = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
-        mnuherramientas = new javax.swing.JMenu();
-        mnuayuda = new javax.swing.JMenu();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
         mnusalir = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -62,27 +57,27 @@ public class frminicio extends javax.swing.JFrame {
         lblidpersona.setForeground(new java.awt.Color(255, 255, 255));
         lblidpersona.setText("jLabel1");
         escritorio.add(lblidpersona);
-        lblidpersona.setBounds(20, 30, 110, 14);
+        lblidpersona.setBounds(30, 40, 110, 14);
 
         lblnombre.setForeground(new java.awt.Color(255, 255, 255));
         lblnombre.setText("jLabel2");
         escritorio.add(lblnombre);
-        lblnombre.setBounds(20, 90, 110, 14);
+        lblnombre.setBounds(90, 40, 110, 14);
 
         lblapaterno.setForeground(new java.awt.Color(255, 255, 255));
         lblapaterno.setText("jLabel3");
         escritorio.add(lblapaterno);
-        lblapaterno.setBounds(20, 140, 130, 14);
+        lblapaterno.setBounds(290, 40, 130, 10);
 
         lblamaterno.setForeground(new java.awt.Color(255, 255, 255));
         lblamaterno.setText("jLabel4");
         escritorio.add(lblamaterno);
-        lblamaterno.setBounds(20, 190, 130, 14);
+        lblamaterno.setBounds(200, 40, 130, 14);
 
         lblacceso.setForeground(new java.awt.Color(255, 255, 255));
         lblacceso.setText("jLabel5");
         escritorio.add(lblacceso);
-        lblacceso.setBounds(20, 230, 150, 14);
+        lblacceso.setBounds(410, 40, 150, 10);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/logomiogrande.png"))); // NOI18N
         escritorio.add(jLabel2);
@@ -154,10 +149,6 @@ public class frminicio extends javax.swing.JFrame {
 
         menuBar.add(mnureservas);
 
-        mnuconsultas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/Consultas.png"))); // NOI18N
-        mnuconsultas.setText("Consultas");
-        menuBar.add(mnuconsultas);
-
         mnuconfiguraciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/Configuraciones.png"))); // NOI18N
         mnuconfiguraciones.setText("Configuraciones");
 
@@ -172,23 +163,6 @@ public class frminicio extends javax.swing.JFrame {
         mnuconfiguraciones.add(jMenuItem2);
 
         menuBar.add(mnuconfiguraciones);
-
-        mnuherramientas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/Herramientas.png"))); // NOI18N
-        mnuherramientas.setText("Herramientas");
-        menuBar.add(mnuherramientas);
-
-        mnuayuda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/Ayuda.png"))); // NOI18N
-        mnuayuda.setText("Ayuda");
-
-        jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem3.setText("Acerca de...");
-        mnuayuda.add(jMenuItem3);
-
-        jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_H, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem4.setText("Ayuda..");
-        mnuayuda.add(jMenuItem4);
-
-        menuBar.add(mnuayuda);
 
         mnusalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/Salir.png"))); // NOI18N
         mnusalir.setText("Salir");
@@ -307,8 +281,6 @@ public class frminicio extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
     public static javax.swing.JLabel lblacceso;
     public static javax.swing.JLabel lblamaterno;
     public static javax.swing.JLabel lblapaterno;
@@ -316,10 +288,7 @@ public class frminicio extends javax.swing.JFrame {
     public static javax.swing.JLabel lblnombre;
     private javax.swing.JMenuBar menuBar;
     public static javax.swing.JMenu mnuarchivo;
-    private javax.swing.JMenu mnuayuda;
     public static javax.swing.JMenu mnuconfiguraciones;
-    private javax.swing.JMenu mnuconsultas;
-    private javax.swing.JMenu mnuherramientas;
     private javax.swing.JMenu mnureservas;
     private javax.swing.JMenu mnusalir;
     private javax.swing.JMenu mnusisreserva;
